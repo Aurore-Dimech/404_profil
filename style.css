@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, 6px)
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+#page_1 {
+    background-image: url(assets/bg_full_courtroom.jpg);
+    background-size: cover;
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+main p {
+    color: red;
+    font-size: 8vh;
+    display: flex;
+    justify-content: center;
+}
+
+#titres {
+    background: linear-gradient(to right, transparent 0%, black 50%, transparent 100%);
+    width: 100vh;
+}
+
+#t1 {
+    animation-name: slideInLeft;
+    animation-duration: 2s;
+}
+
+#t2 {
+    animation-name: slideInRight;
+    animation-duration: 2s;
+}
+
+#start {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    color: green;
+    font-size: 3vh;
+    animation: float infinite forwards 3s;
+    text-decoration: underline;
+}
+
+#page_1 {
+    position: relative;
+    visibility: visible;
+}
+
+@keyframes defilement-rtl {
+    0% {
+      transform: translate3d(0,0,0);
+    }
+    100% {
+      transform: translate3d(-100%,0,0);
+    }
+}
+
+#page_2 {
+    position: absolute;
+    visibility: hidden;
+
+    background-image: url(assets/cover4.jpg);
+    background-size: cover;
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+header {
+    max-width: 30em;
+    margin: 0 auto 2em;
+    border: 3px solid rgb(198, 221, 241);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+#mess_défilant {
+    display: inline-block;
+    padding-right: 2em;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: defilement-rtl 15s infinite linear;
+}
+
+#mess_contenu {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-block: 5px;
+}
+
+header img {
+    height: 30px;
+}
+
+header p {
+    color: white;
+}
